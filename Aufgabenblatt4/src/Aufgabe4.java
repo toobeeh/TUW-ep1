@@ -7,23 +7,51 @@ import java.util.Arrays;
 public class Aufgabe4 {
 
     private static int getHighestTripleSum(int[] workArray, int start, int end) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return -1; //Zeile kann geändert oder entfernt werden.
+        int thisSum = 0;
+        int otherHighest = 0;
+        // if end is not out of bounds and at least one item between start and end items
+        if(workArray.length > end && end - start > 1){
+            // get current triple sum
+            thisSum = workArray[start + 0] + workArray[start + 1] + workArray[start + 2];
+            // get highest triple sum of remainings
+            otherHighest = getHighestTripleSum(workArray, ++start, end);
+        }
+        return thisSum > otherHighest ? thisSum : otherHighest;
     }
 
     private static int getHighestDifferenceWithLastValue(int[] workArray, int index) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return -1; //Zeile kann geändert oder entfernt werden.
+        int thisDifference = 0, otherDifference = 0;
+        // if index is in range
+        if(workArray.length > index) {
+            // get this abs difference
+            thisDifference = Math.abs(workArray[workArray.length-1] - workArray[index]);
+            // get other biggest abs difference
+            otherDifference = getHighestDifferenceWithLastValue(workArray, ++index);
+        }
+        return thisDifference > otherDifference ? thisDifference : otherDifference;
     }
 
     private static int[] replaceAllMoreDigitValues(int[] workArray, int index) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        int[] workClone = workArray.clone();
+        // if index is in range
+        if(workArray.length > index) {
+            // replace remaining digitvalues
+            workClone = replaceAllMoreDigitValues(workClone, index + 1);
+            // replace this digitvalue
+            if(workClone[index] > 9) workClone[index] = -1;
+        }
+        return workClone;
     }
 
     private static boolean containsValue(int[] workArray, int value) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return false; //Zeile kann geändert oder entfernt werden.
+        boolean contains = false;
+        // if array can be split
+        if(workArray.length >= 2){
+            // check if first or second half copies contain value
+            contains = containsValue(Arrays.copyOfRange(workArray, 0, workArray.length / 2 ), value)
+                    || containsValue(Arrays.copyOfRange(workArray, workArray.length / 2, workArray.length), value);
+        } else if ( workArray.length == 1) contains = workArray[0] == value; // else just check the only value
+        return contains;
     }
 
     public static void main(String[] args) {
