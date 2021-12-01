@@ -7,17 +7,45 @@ import java.util.Arrays;
 public class Aufgabe3 {
 
     private static int[] genRandomArray(int length, int maxNumber) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
-        return null; //Zeile kann geändert oder entfernt werden.
+        int[] randomArray = new int[length];
+        for(int i = 0; i < length; i++)
+            randomArray[i] = (int)Math.random() * maxNumber;
+        return randomArray;
     }
 
     private static void replaceValuesLowerAverage(int[] workArray) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        // get avg
+        int sum = 0;
+        for(int i = 0; i < workArray.length; i++)
+            sum += workArray[i];
+        // replace below avg
+        int avg = sum / workArray.length;
+        for(int i = 0; i < workArray.length; i++)
+            if(workArray[i] < avg) workArray[i] = avg;
     }
 
     private static int[] combineArrays(int[] workArray1, int[] workArray2) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
-        return null; //Zeile kann geändert oder entfernt werden.
+        int[] combined = new int[workArray1.length + workArray2.length];
+        //if arrays are not equal length
+        if(workArray1.length != workArray2.length){
+            // find bigger array
+            int[] bigger = workArray1.length > workArray2.length ? workArray1 : workArray2;
+            // set other array by comparing pointer of bigger array (more dynamic than detecting smaller..)
+            int[] other = bigger == workArray1 ? workArray2 : workArray1;
+            for(int i = 0; i < bigger.length; i++){
+                combined[i] = bigger[i];
+                if(other.length > i) combined[i + bigger.length] = other[i];
+            }
+        }
+        // both arrays are of equal length
+        else {
+            // fill combined alternating
+            for(int i = 0; i < workArray1.length; i++){
+                combined[i * 2] = workArray1[i];
+                combined[i * 2 + 1] = workArray2[i];
+            }
+        }
+        return combined;
     }
 
     public static void main(String[] args) {
