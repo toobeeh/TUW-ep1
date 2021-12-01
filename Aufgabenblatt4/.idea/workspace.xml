@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt4_kopie/Aufgabenblatt4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt4_kopie/angabe/reviews/julian/Aufgabenblatt4/Aufgabenblatt4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt4_kopie/angabe/reviews/sofiia/Aufgabenblatt4/Aufgabenblatt4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt4_kopie/angabe/reviews/tea/Aufgabenblatt4/Aufgabenblatt4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6 - Kopie/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6 - Kopie/angabe/reviews/barbara/Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6 - Kopie/angabe/reviews/christian/Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6 - Kopie/angabe/reviews/stefan/Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6/angabe/reviews/dylan/Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6/angabe/reviews/markus/Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Aufgabenblatt6/angabe/reviews/patrick/Aufgabenblatt6/Aufgabenblatt6.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angabe/Aufgabenblatt4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/angabe/Aufgabenblatt4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angabe/Aufgabenblatt4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/angabe/Aufgabenblatt4.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aufgabe3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aufgabe1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="2054LCVI3MecGQFvINXQyS9KKpK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

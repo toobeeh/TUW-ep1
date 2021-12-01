@@ -1,5 +1,6 @@
 /*
     Aufgabe 1) Code Analyse - Eindimensionale Arrays
+    // test github commit
 */
 public class Aufgabe1 {
 
