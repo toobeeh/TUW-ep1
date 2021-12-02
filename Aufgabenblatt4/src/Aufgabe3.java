@@ -8,20 +8,21 @@ public class Aufgabe3 {
 
     private static int[] genRandomArray(int length, int maxNumber) {
         int[] randomArray = new int[length];
-        for(int i = 0; i < length; i++)
+        for(int i = 0; i < randomArray.length; i++) {
             randomArray[i] = (int)Math.random() * maxNumber;
+        }
         return randomArray;
     }
 
     private static void replaceValuesLowerAverage(int[] workArray) {
         // get avg
         int sum = 0;
-        for(int i = 0; i < workArray.length; i++)
-            sum += workArray[i];
+        for(int entry: workArray) sum += entry;
         // replace below avg
         int avg = sum / workArray.length;
-        for(int i = 0; i < workArray.length; i++)
+        for(int i = 0; i < workArray.length; i++) {
             if(workArray[i] < avg) workArray[i] = avg;
+        }
     }
 
     private static int[] combineArrays(int[] workArray1, int[] workArray2) {

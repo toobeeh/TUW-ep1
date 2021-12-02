@@ -5,8 +5,9 @@ public class Aufgabe2 {
 
     public static String arrayJoin(int[] array, String separator){
         String line = "";
-        for(int i = 0; i < array.length; i++)
+        for(int i = 0; i < array.length; i++) {
             line += (i == 0 ? "" : separator) + array[i];
+        }
         return line;
     }
 
@@ -28,8 +29,9 @@ public class Aufgabe2 {
         numbers = new int[] {5, 2, 3, 5, 5, 4, 6, 7, 8, 5};
         int fiveCount = 0;
         // count fives in numbers array
-        for (int i = 0; i < numbers.length; i++)
-            if(numbers[i] == 5) fiveCount++;
+        for (int number : numbers) {
+            if(number == 5) fiveCount++;
+        }
         // create result array with space for extra number per five
         int[] result = new int[numbers.length + fiveCount];
         // index variables for both arrays
@@ -38,8 +40,7 @@ public class Aufgabe2 {
         while(numbersIndex < numbers.length){
             result[resultIndex] = numbers[numbersIndex];
             // if number is five, insert additional number and increment index of result
-            if(result[resultIndex] == 5)
-                result[++resultIndex] = -1;
+            if(result[resultIndex] == 5) result[++resultIndex] = -1;
             resultIndex++;
             numbersIndex++;
         }
@@ -48,17 +49,20 @@ public class Aufgabe2 {
         // d
         numbers = new int[15];
         // fill numbers with 1-15
-        for(int i = 0; i < numbers.length; i++)
+        for(int i = 0; i < numbers.length; i++) {
             numbers[i] = i+1;
+        }
         // print content reverse with while
         numbersIndex = numbers.length-1;
         System.out.print("\nwhile-schleife:");
-        while(numbersIndex >= 0)
+        while(numbersIndex >= 0) {
             System.out.print(" " + numbers[numbersIndex--]);
+        }
         // print content reverse with for
         System.out.print("\nfor-schleife:");
-        for(int i = numbers.length-1; i >= 0; i--)
+        for(int i = numbers.length-1; i >= 0; i--) {
             System.out.print(" "+ numbers[i]);
+        }
 
         // e
         numbers = new int[] {54, 14, 18, 9, 5, 32, 41, 71, 1, 46, 76, 6, 45, 89, 18};

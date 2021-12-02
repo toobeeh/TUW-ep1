@@ -24,8 +24,9 @@ public class Aufgabe5 {
             while(inputStream.hasNextLine()){
                 tempLine = inputStream.nextLine();
                 // treat firstline as zero-based index -> -1
-                if(lineIndex >= (firstLine - 1) && lineIndex - (firstLine - 1) < textLines.length)
+                if(lineIndex >= (firstLine - 1) && lineIndex - (firstLine - 1) < textLines.length) {
                     textLines[lineIndex - (firstLine - 1)] = tempLine;
+                }
                 lineIndex++;
             }
             inputStream.close();
@@ -38,7 +39,7 @@ public class Aufgabe5 {
     }
 
     private static void extractData(String[] dataArray, int[] resultArray, int indexColumn, int entriesPerYear) {
-        // fill result array as far as possible
+        // fill result array as long as index is in bound of result & data is available
         for(int yearIndex = 0; yearIndex < resultArray.length && yearIndex * entriesPerYear < dataArray.length; yearIndex++){
             // get sum of values
             int sum = 0;
@@ -61,9 +62,9 @@ public class Aufgabe5 {
 
         // calculate sum
         int sum = 0;
-        for(int year = 0; year < iceDays.length; year++)
-            sum += iceDays[year];
+        for(int count : iceDays) sum += count;
 
+        // draw graph
         for(int year = 0; year < iceDays.length; year++){
             // calculate coordinates
             int left = 15 + year * 20 + year * 5;

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="Solve ab4 ag5 / ab4 done 🥳">
+    <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="Minor formatting changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aufgabe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aufgabe3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aufgabe4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aufgabe5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe5.java" afterDir="false" />
     </list>
@@ -27,7 +29,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aufgabenblatt3" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Application.Aufgabe5">
+  <component name="RunManager" selected="Application.Aufgabe3">
     <configuration name="Aufgabe1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Aufgabe1" />
       <module name="Aufgabenblatt4" />
@@ -74,9 +76,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Aufgabe3" />
         <item itemvalue="Application.Aufgabe5" />
         <item itemvalue="Application.Aufgabe4" />
-        <item itemvalue="Application.Aufgabe3" />
         <item itemvalue="Application.Aufgabe2" />
         <item itemvalue="Application.Aufgabe1" />
       </list>
@@ -133,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638406081557</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Minor formatting changes">
+      <created>1638408472172</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638408472172</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +167,8 @@
     <MESSAGE value="Solve ab4 ag3" />
     <MESSAGE value="Solve ab4 ag4" />
     <MESSAGE value="Solve ab4 ag5 / ab4 done " />
-    <option name="LAST_COMMIT_MESSAGE" value="Solve ab4 ag5 / ab4 done " />
+    <MESSAGE value="Minor formatting changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor formatting changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

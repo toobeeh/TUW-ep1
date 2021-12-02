@@ -51,8 +51,9 @@ public class Aufgabe4 {
             contains = containsValue(Arrays.copyOfRange(workArray, 0, workArray.length / 2 ), value)
                     || containsValue(Arrays.copyOfRange(workArray, workArray.length / 2, workArray.length), value);
         }
-        else if(workArray.length == 1)
+        else if(workArray.length == 1) {
             contains = workArray[0] == value; // else just check the only value
+        }
         return contains;
     }
 
