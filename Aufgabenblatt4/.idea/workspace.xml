@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="Solve ab4 ag3">
+    <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="Solve ab4 ag4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aufgabe4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aufgabe5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe5.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +23,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aufgabenblatt3" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Application.Aufgabe4">
+  <component name="RunManager" selected="Application.Aufgabe5">
     <configuration name="Aufgabe1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Aufgabe1" />
       <module name="Aufgabenblatt4" />
@@ -73,11 +73,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Aufgabe5" />
         <item itemvalue="Application.Aufgabe4" />
         <item itemvalue="Application.Aufgabe3" />
         <item itemvalue="Application.Aufgabe2" />
         <item itemvalue="Application.Aufgabe1" />
-        <item itemvalue="Application.Aufgabe5" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638396485956</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Solve ab4 ag4">
+      <created>1638400949771</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638400949771</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +148,17 @@
     <MESSAGE value="Solve ab4 ag1" />
     <MESSAGE value="Solve ab4 ag2" />
     <MESSAGE value="Solve ab4 ag3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solve ab4 ag3" />
+    <MESSAGE value="Solve ab4 ag4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solve ab4 ag4" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="9" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

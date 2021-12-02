@@ -21,7 +21,12 @@ public class Aufgabe5 {
 
         try {
             Scanner inputStream = new Scanner(new FileReader("./src/" + fileName));
-            //TODO: Implementieren Sie hier die Schleife für das Einlesen der Daten
+            while(inputStream.hasNextLine()){
+                tempLine = inputStream.nextLine();
+                // treat firstline as zero-based index -> -1
+                if(lineIndex >= (firstLine - 1) && lineIndex - (firstLine - 1) < textLines.length) textLines[lineIndex - (firstLine - 1)] = tempLine;
+                lineIndex++;
+            }
             inputStream.close();
         } catch (IOException e) {
             System.out.println("File... " + System.getProperty("user.dir") + "\\src\\" + fileName + " not found!");
@@ -32,16 +37,53 @@ public class Aufgabe5 {
     }
 
     private static void extractData(String[] dataArray, int[] resultArray, int indexColumn, int entriesPerYear) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        // fill result array as far as possible
+        for(int yearIndex = 0; yearIndex < resultArray.length && yearIndex * entriesPerYear < dataArray.length; yearIndex++){
+            // get sum of values
+            int sum = 0;
+            for(int entryOfYearIndex = 0; entryOfYearIndex < entriesPerYear; entryOfYearIndex++){
+                // get columns of line at index of that years entry
+                String[] entry = dataArray[yearIndex * entriesPerYear + entryOfYearIndex].split(";");
+                // add value at specified column to sum
+                if(entry.length > indexColumn) sum += Integer.parseInt((entry[indexColumn]));
+            }
+            // add year sum to result array
+            resultArray[yearIndex] = sum;
+        }
     }
 
     private static void drawChart(CodeDraw myDrawObj, int[] iceDays) {
-
+        // text config
         TextFormat format = myDrawObj.getTextFormat();
         format.setFontSize(10);
         format.setHorizontalAlign(HorizontalAlign.CENTER);
 
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        // calculate sum
+        int sum = 0;
+        for(int year = 0; year < iceDays.length; year++)
+            sum += iceDays[year];
+
+        for(int year = 0; year < iceDays.length; year++){
+            // calculate coordinates
+            int left = 15 + year * 20 + year * 5;
+            int top = myDrawObj.getHeight() - iceDays[year] * 10;
+            int height = iceDays[year] * 10;
+
+            // draw bar
+            myDrawObj.setColor(iceDays[year] >= sum / iceDays.length ? Color.BLUE : Color.CYAN);
+            myDrawObj.fillRectangle(left, top, 20, height);
+
+            // write date etxt
+            myDrawObj.setColor(iceDays[year] >= sum / iceDays.length ? Color.WHITE : Color.BLACK);
+            myDrawObj.drawText(left + 10, myDrawObj.getHeight() - 10, String.valueOf(1970 + year).substring(2));
+
+            // write value of icedays text
+            myDrawObj.setColor(Color.BLACK);
+            myDrawObj.drawText(left + 10, top - 10, iceDays[year] + "");
+        }
+
+        // show meeeeeeeeeeeeee :)))))
+        myDrawObj.show();
     }
 
     public static void main(String[] args) {
@@ -51,6 +93,9 @@ public class Aufgabe5 {
         CodeDraw myDrawObj = new CodeDraw(width, height);
         myDrawObj.setTitle("Ergebnis Wetterdaten - EISTAGE");
 
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        int[] iceDaysPerYear = new int[51]; // icedays per year for 51 years
+        String[] csvLines = readFileData("weather_data.csv", 182,793);
+        extractData(csvLines, iceDaysPerYear,12,12);
+        drawChart(myDrawObj, iceDaysPerYear);
     }
 }
