@@ -66,8 +66,7 @@ public class Aufgabe2 {
 
         // e
         numbers = new int[] {54, 14, 18, 9, 5, 32, 41, 71, 1, 46, 76, 6, 45, 89, 18};
-        int min = 0, max = 0;
-        double sum = 0;
+        int min = numbers[0], max = numbers[0], sum = 0;
         // find sum, min and max
         for(int i = 0; i < numbers.length; i++){
             if(numbers[i] < min) min = numbers[i];
