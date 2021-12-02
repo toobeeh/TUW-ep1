@@ -9,7 +9,7 @@ public class Aufgabe3 {
     private static int[] genRandomArray(int length, int maxNumber) {
         int[] randomArray = new int[length];
         for(int i = 0; i < randomArray.length; i++) {
-            randomArray[i] = (int)Math.random() * maxNumber;
+            randomArray[i] = (int)(Math.random() * maxNumber);
         }
         return randomArray;
     }
