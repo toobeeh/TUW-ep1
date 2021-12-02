@@ -24,7 +24,8 @@ public class Aufgabe5 {
             while(inputStream.hasNextLine()){
                 tempLine = inputStream.nextLine();
                 // treat firstline as zero-based index -> -1
-                if(lineIndex >= (firstLine - 1) && lineIndex - (firstLine - 1) < textLines.length) textLines[lineIndex - (firstLine - 1)] = tempLine;
+                if(lineIndex >= (firstLine - 1) && lineIndex - (firstLine - 1) < textLines.length)
+                    textLines[lineIndex - (firstLine - 1)] = tempLine;
                 lineIndex++;
             }
             inputStream.close();
