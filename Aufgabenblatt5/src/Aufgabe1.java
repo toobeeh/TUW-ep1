@@ -7,22 +7,61 @@ import java.util.Arrays;
 public class Aufgabe1 {
 
     private static int[][] genFilledArray(int n) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        int[][] numbers = new int[n][n];
+        // loop through positions in matrix
+        for(int outerIndex = 0; outerIndex < n; outerIndex++){
+            for(int innerIndex = 0; innerIndex < n; innerIndex++){
+                // calculate value
+                int value = (innerIndex + 1 + outerIndex) * 2;
+                // if value exceeds limit (n*2), value is the difference to that
+                if(value > n*2) value = n*2 - (value - n * 2);
+                numbers[outerIndex][innerIndex] = value;
+            }
+        }
+        return numbers;
     }
 
     private static void shiftLinesInArray(int[][] workArray) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
+        // save shifted out element on the edge
+        int[] edge = workArray[0];
+        for(int line = 1; line < workArray.length; line++){
+            workArray[line - 1] = workArray[line];
+        }
+        // restore shifted out element at other edge of array
+        workArray[workArray.length-1] = edge;
     }
 
     private static int[][] extendArray(int[][] inputArray) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        // find size
+        int size = 0;
+        for(int[] line : inputArray) size = size > line.length ? size : line.length;
+
+        // init and loop through extended array
+        int[][] extended = new int[inputArray.length][size];
+        for(int line = 0; line < extended.length; line++){
+            // reverse loop through line with dynamic index from end (to match different lengths: distance instead index)
+            for(int endDistance = 0; endDistance < size; endDistance++){
+                // if index does not exist in input array, fill with 1
+                if(endDistance > inputArray[line].length - 1) extended[line][size - 1 - endDistance] = 1;
+                else extended[line][size - 1 - endDistance] = inputArray[line][inputArray[line].length - 1 - endDistance];
+            }
+        }
+        return extended;
     }
 
     private static long[] reformatArray(int[][] inputArray) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        long[] reformatted = new long[inputArray.length];
+        // loop through lines
+        for(int line = 0; line < reformatted.length; line++){
+            long sum = 0;
+            // loop through decimal places
+            for(int exp = 0; exp < inputArray[line].length; exp++){
+                // calculate value and add to sum
+                sum += inputArray[line][exp] * Math.pow(10, exp);
+            }
+            reformatted[line] = sum;
+        }
+        return reformatted;
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
