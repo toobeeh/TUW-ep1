@@ -15,7 +15,7 @@ public class Aufgabe3 {
     }
 
     private static void replaceValuesLowerAverage(int[] workArray) {
-        // get avg
+        // get sum
         int sum = 0;
         for(int entry: workArray) sum += entry;
         // replace below avg

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="Formatting: &#10;- foreach for sum calculations&#10;- braces for all blocks that are not in one line">
+    <list default="true" id="1b1ea1b4-d0cd-44e5-89aa-f3ef4f6cca3b" name="Changes" comment="Fix random array fill cast expression">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aufgabe2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aufgabe3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgabe3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638443204499</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix min/max init values">
+      <created>1638455338797</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1638455338797</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix random array fill cast expression">
+      <created>1638457908161</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1638457908161</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,7 +188,9 @@
     <MESSAGE value="Solve ab4 ag5 / ab4 done " />
     <MESSAGE value="Minor formatting changes" />
     <MESSAGE value="Formatting: &#10;- foreach for sum calculations&#10;- braces for all blocks that are not in one line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatting: &#10;- foreach for sum calculations&#10;- braces for all blocks that are not in one line" />
+    <MESSAGE value="Fix min/max init values" />
+    <MESSAGE value="Fix random array fill cast expression" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix random array fill cast expression" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
