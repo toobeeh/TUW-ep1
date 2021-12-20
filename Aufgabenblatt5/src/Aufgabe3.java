@@ -44,8 +44,60 @@ public class Aufgabe3 {
     }
 
     private static int[][] blackenSimilarRegions(int[][] imgArray, int rowStart, int rowEnd, int colStart, int colEnd, double threshold) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        // get re-usable values - will use same algorithm with center point to skip no possible matches
+        // (-> threshold could match region even if fragment is out of bounds - here "out of bounds" are specified as 255 mismatch)
+        int rowSpan = rowEnd - rowStart;
+        int colSpan = colEnd - colStart;
+        int outOfBoundsMismatch = 255;
+
+        // init result array and copy values, also init and get region array
+        int[][] blackened = new int[imgArray.length][imgArray[0].length];
+        int[][] region = new int[rowSpan + 1][colSpan + 1];
+        for(int row = 0; row < imgArray.length; row++){
+            for(int col = 0; col < imgArray[0].length; col++){
+                blackened[row][col] = imgArray[row][col];
+                if(row >= rowStart && row <= rowEnd && col >= colStart && col <= colEnd){
+                    region[row - rowStart][col - colStart] = imgArray[row][col];
+                }
+            }
+        }
+
+        // loop through each pixel and calculate SSD
+        for(int row = 0; row < imgArray.length; row++){
+            for(int col = 0; col < imgArray[0].length; col++){
+                // get the current SSD
+                int ssd = 0;
+                for(int regionRow = 0; regionRow < region.length; regionRow++){
+                    int targetRow = row - rowSpan/2 + regionRow;
+                    for(int regionCol = 0; regionCol < region[0].length;  regionCol++){
+                        int targetCol = col - colSpan/2 + regionCol;
+                        // if target col and row are in bounds, calc SSD
+                        if(targetCol >= 0 && targetCol < imgArray[0].length && targetRow >= 0 && targetRow < imgArray.length){
+                            ssd += Math.pow(imgArray[targetRow][targetCol] - region[regionRow][regionCol],2);
+                        }
+                        // else count as absolute mismatch (difference specified above)
+                        else {
+                            ssd += Math.pow(outOfBoundsMismatch, 2);
+                        }
+                    }
+                }
+                // if ssd below threshold, blacken area in result
+                if(ssd < threshold){
+                    for(int regionRow = 0; regionRow < region.length; regionRow++){
+                        int targetRow = row - rowSpan/2 + regionRow;
+                        for(int regionCol = 0; regionCol < region[0].length;  regionCol++){
+                            int targetCol = col - colSpan/2 + regionCol;
+                            // if target col and row are in bounds, blacken in result
+                            if(targetCol >= 0 && targetCol < imgArray[0].length && targetRow >= 0 && targetRow < imgArray.length){
+                                blackened[targetRow][targetCol] = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return blackened;
     }
 
     public static void main(String[] args) {
@@ -62,13 +114,13 @@ public class Aufgabe3 {
         int[][] imgArray = convertImg2Array(img);
 
         //blacken the "g"
-        int[][] resultImg = blackenSimilarRegions(imgArray, 148, 158, 321, 328, 1e5);
+        //int[][] resultImg = blackenSimilarRegions(imgArray, 148, 158, 321, 328, 1e5);
 
         //blacken the "while"
         //int[][] resultImg = blackenSimilarRegions(imgArray, 214, 230, 233, 270, 1e6);
 
         //binarize by comparing to a single black pixel region
-        //int[][] resultImg = blackenSimilarRegions(imgArray, 150, 150, 95, 95, 220 * 220);
+        int[][] resultImg = blackenSimilarRegions(imgArray, 150, 150, 95, 95, 220 * 220);
 
         drawImage(imgArray);
         if (resultImg != null) {
