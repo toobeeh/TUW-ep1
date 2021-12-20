@@ -34,7 +34,7 @@ public class Aufgabe1 {
     private static int[][] extendArray(int[][] inputArray) {
         // find size
         int size = 0;
-        for(int[] line : inputArray) size = size > line.length ? size : line.length;
+        for(int[] line : inputArray) size = Math.max(line.length, size);
 
         // init and loop through extended array
         int[][] extended = new int[inputArray.length][size];
@@ -57,7 +57,7 @@ public class Aufgabe1 {
             // loop through decimal places
             for(int exp = 0; exp < inputArray[line].length; exp++){
                 // calculate value and add to sum
-                sum += inputArray[line][exp] * Math.pow(10, exp);
+                sum += inputArray[line][exp] * Math.pow(10, inputArray[line].length - 1 - exp);
             }
             reformatted[line] = sum;
         }
