@@ -55,7 +55,7 @@ public class Aufgabe4 {
         if(row >= landscape.length || col >= landscape[0].length
                 || row < 0 || col < 0
                 || landscape[row][col] != Color.GREEN) return;
-        //spread fire N-E-S-W
+        // spread fire N-E-S-W
         landscape[row][col] = Color.RED;
         if(myRand.nextDouble() >= 0.3) simSpreadingFire(landscape, row-1,col);
         if(myRand.nextDouble() >= 0.3) simSpreadingFire(landscape, row,col+1);
